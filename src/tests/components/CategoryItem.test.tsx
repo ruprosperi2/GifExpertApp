@@ -13,7 +13,7 @@ describe("Descripción", () => {
     }
 
     test("otra descripcion", () => {
-        const wrapper = shallow(<CategoryItem image={image} />)
+        const wrapper = shallow(<CategoryItem {...image} />)
 
         expect(wrapper).toMatchSnapshot()
     })

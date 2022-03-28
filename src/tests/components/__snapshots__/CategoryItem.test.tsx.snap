@@ -2,7 +2,12 @@
 
 exports[`Descripción > otra descripcion 1`] = `
 <div>
-  <img />
-  <p />
+  <img
+    alt="custom-title"
+    src="custom-url"
+  />
+  <p>
+    custom-title
+  </p>
 </div>
 `;
