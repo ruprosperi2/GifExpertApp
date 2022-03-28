@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`Descripción > otra descripcion 1`] = `
+<div>
+  <img />
+  <p />
+</div>
+`;
