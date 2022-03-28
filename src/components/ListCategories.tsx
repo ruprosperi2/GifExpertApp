@@ -1,29 +1,25 @@
-import {getGifs} from "../helpers";
-import {useEffect, useState} from "react";
 import CategoryItem from "./CategoryItem";
+import {useFetchGifs} from "../hooks/useFetchGifs";
+
 const ListCategories = ({category}: { category: string }) => {
 
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        getGifs(category).then(img => setImages(img))
-
-
-    }, [category])
+    const {data, loading} = useFetchGifs(category)
 
     return (
         <>
             <h2>{category}</h2>
 
-             <div className={"card-grid"}>
-                {images.map((image) => {
+            {loading ? 'Cargando' :''}
+
+              <div className={"card-grid"}>
+                {data.map((image) => {
                     return (
                         <CategoryItem
                             key={image.id}
                             {...image}
                             />)
                 })}
-             </div>
+              </div>
         </>
     )
 }
